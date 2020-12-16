@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMM.Views.TechnicalSpeedPage">
+    <ContentPage.Content>
+        <ListView
+                ItemsSource="{Binding TechSpeed}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="True"
+                RefreshCommand="{Binding Load}"
+                SelectionMode="None"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RetainElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Frame Padding="2" CornerRadius="10" Margin = "0,5,0,5">
+                                <StackLayout Padding="10">
+                                    <DatePicker Date="{Binding Date}" IsEnabled="False" FontSize="Micro"/>
+                                    <Label Text="{Binding Direction}" LineBreakMode="NoWrap" FontSize="7" />
+                                    <StackLayout BindableLayout.ItemsSource="{Binding Speeds}">
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

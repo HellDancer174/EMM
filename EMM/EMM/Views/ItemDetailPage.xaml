@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMM.Views.ItemDetailPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="round_create_24" Clicked="ToolbarItem_Clicked">
+        </ToolbarItem>
+        <ToolbarItem IconImageSource="round_delete_24" Command="{Binding DeleteCommand}"  Clicked="Cancel_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView HeightRequest="3000">
+            <StackLayout Padding="5">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Дата поездки" VerticalOptions="Center" FontSize="Micro"/>
+                    <DatePicker Date="{Binding DateOfStart}" IsEnabled="False" VerticalOptions="Center" FontSize="Micro"/>
+                </StackLayout>
+                <Frame>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Явка"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" Grid.Row="0" Grid.Column="0"/>
+                        <TimePicker Time="{Binding Start}" Format="HH:mm" IsEnabled="False" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="1"/>
+                        <Label Text="Окончание работы" LineBreakMode="WordWrap" MaxLines="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="2"/>
+                        <TimePicker Time="{Binding Finish}" Format="HH:mm" IsEnabled="False" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="3"/>
+                    </Grid>
+                </Frame>
+                <Label Text="Следование пассажиром" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                <Frame Padding="5">
+                    <StackLayout>
+                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="5,0,0,0">
+                            <Label Text="Номер поезда" FontSize="Micro" HorizontalOptions="StartAndExpand" MaxLines="2" />
+                            <Label Text="Время отправления" FontSize="Micro" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="Время прибытия" FontSize="Micro" HorizontalOptions="StartAndExpand"/>
+                        </StackLayout>-->
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Номер поезда" FontSize="Micro" HorizontalOptions="StartAndExpand" Grid.Column="0" Grid.Row="0" />
+                            <Label Text="Время отправления" FontSize="Micro" HorizontalOptions="StartAndExpand" Grid.Column="1" Grid.Row="0"/>
+                            <Label Text="Время прибытия" FontSize="Micro" HorizontalOptions="StartAndExpand" Grid.Column="2" Grid.Row="0"/>
+                        </Grid>
+                        <StackLayout BindableLayout.ItemsSource="{Binding Passangers}">
+                            
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding NumberOfTrain}" Margin="15,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="Micro" Grid.Column="0" Grid.Row="0"/>
+                                        <TimePicker Time="{Binding ArravalTime}" Margin="15,0,0,0"  HorizontalOptions="StartAndExpand" Format="HH:mm" IsEnabled="False" FontSize="Micro" Grid.Column="1" Grid.Row="0"/>
+                                        <TimePicker Time="{Binding DepatureTime}" Margin="15,0,0,0" HorizontalOptions="StartAndExpand" Format="HH:mm" IsEnabled="False" FontSize="Micro" Grid.Column="2" Grid.Row="0"/>
+                                    </Grid>
+                                    <!--<StackLayout Orientation="Horizontal" Margin="5,0,0,0" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding NumberOfTrain}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                                        <TimePicker Time="{Binding ArravalTime}"  HorizontalOptions="StartAndExpand" Format="HH:mm" IsEnabled="False" FontSize="Micro"/>
+                                        <TimePicker Time="{Binding DepatureTime}" HorizontalOptions="StartAndExpand" Format="HH:mm" IsEnabled="False" FontSize="Micro"/>
+                                    </StackLayout>-->
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+
+
+                <Label Text="Локомотивы" HorizontalTextAlignment="Center" FontSize="Small"/>
+
+                <Frame Padding="5">
+                    <StackLayout >
+                        <StackLayout BindableLayout.ItemsSource="{Binding Locomotives}">
+                            <!--<ListView SelectionMode="None" HasUnevenRows="True" HeightRequest="{Binding HeightLocomotiveList, Mode=OneWay}" ItemsSource="{Binding Locomotives}" VerticalOptions="FillAndExpand">
+                            <ListView.ItemTemplate>-->
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition ></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
+                                            <Label Text="Начало приемки"  LineBreakMode="WordWrap" MaxLines="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" Grid.Row="1" Grid.Column="0"/>
+                                            <TimePicker Time="{Binding Inspection}" HorizontalOptions="Center" Format="HH:mm" IsEnabled="False" FontSize="Micro" Grid.Row="1" Grid.Column="1"/>
+                                            <Label Text="Сдача локомотива" LineBreakMode="WordWrap" MaxLines="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Micro" Grid.Row="1" Grid.Column="2"/>
+                                            <TimePicker Time="{Binding Change}" HorizontalOptions="Center" Format="HH:mm" IsEnabled="False" FontSize="Micro" Grid.Row="1" Grid.Column="3"/>
+                                            <Label Text="КП выход" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="2" Grid.Column="0"/>
+                                            <TimePicker Time="{Binding CPExit}" HorizontalOptions="Center" Format="HH:mm" IsEnabled="False" FontSize="Micro" Grid.Row="2" Grid.Column="1"/>
+                                            <Label Text="КП заход" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="2" Grid.Column="2"/>
+                                            <TimePicker Time="{Binding CPEntrance}" HorizontalOptions="Center" Format="HH:mm" IsEnabled="False" FontSize="Micro" Grid.Row="2" Grid.Column="3"/>
+                                        </Grid>
+                                </DataTemplate>
+                                <!--</ListView.ItemTemplate>
+                        </ListView>-->
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Счетчики" FontSize="Small" HorizontalOptions="CenterAndExpand" />
+                <Frame Padding="5">
+                    <StackLayout BindableLayout.ItemsSource="{Binding Meters}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                    <Grid HorizontalOptions="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding LocomotiveName}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="0"/>
+                                        <Label Text="Приемка" VerticalOptions="Center"  FontSize="Micro" Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="Сдача" VerticalOptions="Center"  FontSize="Micro" Grid.Row="0" Grid.Column="2"/>
+                                    <Label Text="Тяга" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="0"/>
+                                        <Label Text="{Binding MotorMeterAtInspection}"  FontSize="Micro" Grid.Row="1" Grid.Column="1"/>
+                                        <Label Text="{Binding MotorMeterAtChange}"  FontSize="Micro" Grid.Row="1" Grid.Column="2"/>
+                                    <Label Text="Рекуперация" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="2" Grid.Column="0"/>
+                                    <Label Text="{Binding BrakeMeterAtInspection}"  FontSize="Micro" Grid.Row="2" Grid.Column="1"/>
+                                    <Label Text="{Binding BrakeMeterAtChange}"  FontSize="Micro" Grid.Row="2" Grid.Column="2"/>
+                                    <Label Text="Отопление" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="3" Grid.Column="0"/>
+                                    <Label Text="{Binding HeatingMeterAtInspection}"  FontSize="Micro" Grid.Row="3" Grid.Column="1"/>
+                                    <Label Text="{Binding HeatingMeterAtChange}"  FontSize="Micro" Grid.Row="3" Grid.Column="2"/>
+                                    </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Поезда" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+                <Frame Padding="5">
+                    <StackLayout>
+                        <StackLayout BindableLayout.ItemsSource="{Binding Trains}">
+                            <!--<ListView HasUnevenRows="True" ItemsSource="{Binding Trains}" HeightRequest="{Binding HeightTrains}" SelectionMode="None">
+                            <ListView.ItemTemplate>-->
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                        <StackLayout>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="№ поезда" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="0"/>
+                                                <Label Text="Станция отправления" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="1"/>
+                                                <Label Text="Станция прибытия" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Micro" Grid.Row="0" Grid.Column="2"/>
+                                                <Label Text="{Binding Number}" WidthRequest="35" HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="0"/>
+                                                <Label Text="{Binding ArravalStation}" WidthRequest="80" HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="1"/>
+                                                <Label Text="{Binding DepatureStation}" WidthRequest="80" HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="2"/>
+                                            </Grid>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition ></ColumnDefinition>
+                                                    <ColumnDefinition ></ColumnDefinition>
+                                                    <ColumnDefinition ></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="Локомотив" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="0" Grid.Row="0"/>
+                                                <Label Text="Вес" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro"  Grid.Column="1" Grid.Row="0"/>
+                                                <Label Text="Оси" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="2" Grid.Row="0"/>
+                                                <Label Text="Условная длина" LineBreakMode="WordWrap" MaxLines="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="3" Grid.Row="0"/>
+                                                <Label Text="{Binding Locomotive}"  HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="0"/>
+                                                <Label Text="{Binding Weight}"  HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="1"/>
+                                                <Label Text="{Binding Axis}"  HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="2"/>
+                                                <Label Text="{Binding Length}"  HorizontalOptions="Center" FontSize="Micro" Grid.Row="1" Grid.Column="3"/>
+                                            </Grid>
+                                        </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                            <!--</ListView.ItemTemplate>
+                        </ListView>-->
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Станции" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+                <Frame Padding="5">
+                    <StackLayout>
+                        <StackLayout BindableLayout.ItemsSource="{Binding Stations}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+
+                                            </Grid.RowDefinitions>
+                                            <Picker ItemsSource="{Binding StationsNames}" SelectedItem="{Binding Name}" IsEnabled="False" WidthRequest="250" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+                                            <Label Text="Время прибытия" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                                            <Label Text="Время отправления" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+                                            <TimePicker Time="{Binding DepatureTime }" WidthRequest="60" Format="HH:mm" IsEnabled="False" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="2"/>
+                                            <TimePicker Time="{Binding ArravalTime}" WidthRequest="60" Format="HH:mm" IsEnabled="False" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="2"/>
+                                            <Label Text="Время маневров" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+                                            <TimePicker Time="{Binding Maneuvers}" WidthRequest="60" Format="HH:mm" IsEnabled="False" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="3"/>
+                                    </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Frame>
+                <Label Text="Замечания" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Frame Padding="5">
+                    <Label Text="{Binding Comment}" FontSize="Micro" MaxLines="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

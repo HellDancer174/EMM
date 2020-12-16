@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.5, 10.75" name="Emm">
+  <DataContextMoniker Name="/EmmDataContext" />
+  <nestedChildShapes>
+    <classShape Id="53c96efe-b2e8-4f64-b092-25c9f8f519d0" absoluteBounds="6, 7.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/EmmDataContext/BackgroundTime_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f80b713-1b73-4f07-93cf-118e12774652" absoluteBounds="6.015, 8.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0142a726-c998-4288-9162-7f91959676d8" absoluteBounds="3.5, 4.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EmmDataContext/Locomitive_TS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc4bd8e8-8e3e-45c6-8a64-0beae04e9556" absoluteBounds="3.515, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12fa514f-65fb-43e2-af0c-d0ad87f56f6a" absoluteBounds="3.5, 6.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/EmmDataContext/Locomotives_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e4a8b7f-3dd3-427d-bc91-b67155e97b31" absoluteBounds="3.515, 6.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8abc29a-10f4-4aef-a53f-7318c842ef8a" absoluteBounds="6.375, 4.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/EmmDataContext/Meters_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6995cbeb-db27-48de-a007-091844956140" absoluteBounds="6.39, 4.8350000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c96b450-9605-459b-9541-7859fb7fb56f" absoluteBounds="1.125, 8.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/EmmDataContext/Passangers_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8698765-6a6f-4e0c-9193-fa1cd84f4903" absoluteBounds="1.1400000000000001, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6a82dc3-b513-46b6-85e3-27dbc93dfd42" absoluteBounds="9.5, 3.5, 2, 1.193992513020834">
+      <DataClassMoniker Name="/EmmDataContext/Stations_TS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18444a76-adf6-4d6e-8a00-0412dd2f0f6a" absoluteBounds="9.515, 3.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dde17c46-ee93-4ccb-8f60-f8404a0a07b2" absoluteBounds="9.25, 6.625, 2, 2.9247054036458335">
+      <DataClassMoniker Name="/EmmDataContext/Trains_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7151cf9c-741e-46fc-8019-e894c5b3d5b1" absoluteBounds="9.265, 7.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 8.76044840494792); (4.81444581486837 : 8.76044840494792); (4.81444581486837 : 7.95359537760417)]" fixedFrom="NotFixed" fixedTo="Caller">
+      <AssociationMoniker Name="/EmmDataContext/BackgroundTime_TT/BackgroundTime_TT_Locomotives_TT" />
+      <nodes>
+        <classShapeMoniker Id="53c96efe-b2e8-4f64-b092-25c9f8f519d0" />
+        <classShapeMoniker Id="12fa514f-65fb-43e2-af0c-d0ad87f56f6a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 5.56899251302083); (4.5 : 6.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Locomitive_TS/Locomitive_TS_Locomotives_TT" />
+      <nodes>
+        <classShapeMoniker Id="0142a726-c998-4288-9162-7f91959676d8" />
+        <classShapeMoniker Id="12fa514f-65fb-43e2-af0c-d0ad87f56f6a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.74120198567708); (6.375 : 6.74120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Locomotives_TT/Locomotives_TT_Meters_TT" />
+      <nodes>
+        <classShapeMoniker Id="12fa514f-65fb-43e2-af0c-d0ad87f56f6a" />
+        <classShapeMoniker Id="d8abc29a-10f4-4aef-a53f-7318c842ef8a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.71875); (9.25 : 7.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Locomotives_TT/Locomotives_TT_Trains_TT" />
+      <nodes>
+        <classShapeMoniker Id="12fa514f-65fb-43e2-af0c-d0ad87f56f6a" />
+        <classShapeMoniker Id="dde17c46-ee93-4ccb-8f60-f8404a0a07b2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.375 : 4.69399251302083); (10.375 : 6.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Stations_TS/Stations_TS_Trains_TT" />
+      <nodes>
+        <classShapeMoniker Id="b6a82dc3-b513-46b6-85e3-27dbc93dfd42" />
+        <classShapeMoniker Id="dde17c46-ee93-4ccb-8f60-f8404a0a07b2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 4.69399251302083); (10.875 : 6.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Stations_TS/Stations_TS_Trains_TT1" />
+      <nodes>
+        <classShapeMoniker Id="b6a82dc3-b513-46b6-85e3-27dbc93dfd42" />
+        <classShapeMoniker Id="dde17c46-ee93-4ccb-8f60-f8404a0a07b2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f98a806c-f0cb-4f10-a6e1-aaf184504d40" absoluteBounds="5.375, 1.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/EmmDataContext/Stations_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec9753c9-f950-4687-b72a-b530c06d531f" absoluteBounds="5.39, 1.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.5 : 3.90625); (5.9375 : 3.90625); (5.9375 : 3.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Stations_TS/Stations_TS_Stations_TT" />
+      <nodes>
+        <classShapeMoniker Id="b6a82dc3-b513-46b6-85e3-27dbc93dfd42" />
+        <classShapeMoniker Id="f98a806c-f0cb-4f10-a6e1-aaf184504d40" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f7685bf9-9648-4f7e-8105-e33681781815" absoluteBounds="13.25, 4.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EmmDataContext/Directions_TS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9f48876-5441-44a9-be10-1ac26f4bf86b" absoluteBounds="13.265, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.5 : 3.9999995); (14.25 : 3.9999995); (14.25 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Stations_TS/Stations_TS_Directions_TS" />
+      <nodes>
+        <classShapeMoniker Id="b6a82dc3-b513-46b6-85e3-27dbc93dfd42" />
+        <classShapeMoniker Id="f7685bf9-9648-4f7e-8105-e33681781815" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d0a13327-c5ba-44ca-be4c-7544f844a2ff" absoluteBounds="0.5, 5.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/EmmDataContext/Routes_TT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1288c7da-e523-4ae9-9ce5-55f452a72010" absoluteBounds="0.51500000000000012, 6.0850000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 6.98159912109375); (3.5 : 6.98159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EmmDataContext/Routes_TT/Routes_TT_Locomotives_TT" />
+      <nodes>
+        <classShapeMoniker Id="d0a13327-c5ba-44ca-be4c-7544f844a2ff" />
+        <classShapeMoniker Id="12fa514f-65fb-43e2-af0c-d0ad87f56f6a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.8125 : 7.5881982421875); (1.8125 : 8.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Routes_TT/Routes_TT_Passangers_TT" />
+      <nodes>
+        <classShapeMoniker Id="d0a13327-c5ba-44ca-be4c-7544f844a2ff" />
+        <classShapeMoniker Id="2c96b450-9605-459b-9541-7859fb7fb56f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.49735757411754 : 5.625); (1.49735757411754 : 4.75374897460938); (1.50677085432534 : 4.75374897460938); (1.50677085432534 : 2.98484537760417); (5.375 : 2.98484537760417)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmmDataContext/Routes_TT/Routes_TT_Stations_TT" />
+      <nodes>
+        <classShapeMoniker Id="d0a13327-c5ba-44ca-be4c-7544f844a2ff" />
+        <classShapeMoniker Id="f98a806c-f0cb-4f10-a6e1-aaf184504d40" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

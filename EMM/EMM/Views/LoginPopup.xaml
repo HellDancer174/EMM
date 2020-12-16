@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 x:Class="EMM.Views.LoginPopup"
+                 WidthRequest="400">
+                 
+        <StackLayout Margin="12"
+                 Padding="5"
+                     WidthRequest="300"
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="Email" />
+                <Entry FontSize="14"
+                       Text="{Binding Login}" />
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Пароль" />
+                <Entry FontSize="14"
+                   IsPassword="True"
+                   Text="{Binding Password}" />
+            </StackLayout>
+            <Button BackgroundColor="Red"
+                FontSize="14"
+                Text="Подписать"
+                Command="{Binding ToDataBase}"
+                Clicked="Login_Clicked"
+                TextColor="White" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Red" IsVisible="{Binding IsVisible}" IsEnabled="{Binding IsEnable}"/>
+
+    </StackLayout>
+</pages:PopupPage>

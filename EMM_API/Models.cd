@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EMM_API.Models.User">
+    <Position X="21.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAgIAAAAAAAAAIAQAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Qualificator">
+    <Position X="19.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Qualificator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.ApplicationUser">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.ApplicationDbContext">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.DirectionFormatter">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DirectionFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Direction">
+    <Position X="6" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgABAAAAAAAAEAAkAAAAAAAAECAAAAAAiAAAAggA=</HashCode>
+      <FileName>Models\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.DBRoutes">
+    <Position X="9.25" Y="5.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEgAAEAEAAACAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DBRoutes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.DBDirections">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAABAAA=</HashCode>
+      <FileName>Models\DBDirections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.ExternalLoginViewModel">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAABAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.ManageInfoViewModel">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.UserInfoViewModel">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.UserLoginInfoViewModel">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.AddExternalLoginBindingModel">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.ChangePasswordBindingModel">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.RegisterBindingModel">
+    <Position X="15.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAgAAAAAAAAAAAAAAACAAAAAIAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.RegisterExternalBindingModel">
+    <Position X="17.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAgAAAAAAAAAAAAAAACAAAAAIAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.RemoveLoginBindingModel">
+    <Position X="19.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.SetPasswordBindingModel">
+    <Position X="12.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.Train" BaseTypeListCollapsed="true">
+    <Position X="26.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAAABQAAAAEACAAAEAAABAAAgCGAAAAAAAgA=</HashCode>
+      <FileName>Models\RouteModels\Train.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.Station" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJgAQgAAAAAAAAEgEAAAAAAEACEAgAAICAAAAAAEgA=</HashCode>
+      <FileName>Models\RouteModels\Station.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.Route" BaseTypeListCollapsed="true">
+    <Position X="23" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAhAIAAAAAAggMAAAAAAAAAAAAAAACAACAAAAgE=</HashCode>
+      <FileName>Models\RouteModels\Route.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.Passanger" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBAAAgAAAAAAAAAgkAAAAAAEAAAAAAAACAAAAAAAgA=</HashCode>
+      <FileName>Models\RouteModels\Passanger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.Meters" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAEAAACgEAAAAAAAAAAAAIIACAAQAAAAgA=</HashCode>
+      <FileName>Models\RouteModels\Meters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.Locomotive" BaseTypeListCollapsed="true">
+    <Position X="28.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAYAAEAGAAAAAAAgABAAAAACAAAIAAAAA=</HashCode>
+      <FileName>Models\RouteModels\Locomotive.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.461" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.RouteModels.BackgroundTime" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEAAAAAAAACAAEQAAAAAgAAAAIAAACAAAAAAAgA=</HashCode>
+      <FileName>Models\RouteModels\BackGroundTime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EMM_API.Models.Instructors.TrainInstructor">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAABAAAIAAAAKAAAAAAABAoAgAE=</HashCode>
+      <FileName>Models\Instructors\TrainInstructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Instructors.StationInstructor">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="EMM_API.Models.Instructors.DBInstructor" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.75" Y="1.188" />
+        <Point X="10.625" Y="1.188" />
+        <Point X="10.625" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CIACAQAAAAAAAAAAQIAAEAAAAABAIAAgAAAAAAAAABA=</HashCode>
+      <FileName>Models\Instructors\StationInstructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Instructors.PassangerInstructor">
+    <Position X="0.75" Y="1.75" Width="2" />
+    <InheritanceLine Type="EMM_API.Models.Instructors.DBInstructor" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="0.688" />
+        <Point X="1.75" Y="0.688" />
+        <Point X="1.75" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAABIAAAAAAAAAAAAAAAAAAAAIACAQEEAAAACAAA=</HashCode>
+      <FileName>Models\Instructors\PassangerInstructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Instructors.LocomotiveInstructor">
+    <Position X="3" Y="2" Width="2" />
+    <InheritanceLine Type="EMM_API.Models.Instructors.DBInstructor" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1" />
+        <Point X="4" Y="1" />
+        <Point X="4" Y="2" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AARAAgIAAEABAAAABAAgAAAIAAAAAAAAAGAAABAwAiE=</HashCode>
+      <FileName>Models\Instructors\LocomotiveInstructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Instructors.DBInstructor">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQABAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Instructors\DBInstructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMM_API.Models.Instructionrs.RouteInstructor">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAhAAAAACAAAAAAAgAEAAEAAAAAAAAAAgAE=</HashCode>
+      <FileName>Models\Instructors\RouteInstructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EMM_API.Models.RouteModels.ITrainModel" Collapsed="true">
+    <Position X="16" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\ITrainModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EMM_API.Models.RouteModels.IStationModel" Collapsed="true">
+    <Position X="14.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\IStationModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EMM_API.Models.RouteModels.IRouteModel" Collapsed="true">
+    <Position X="21.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\IRouteModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EMM_API.Models.RouteModels.IPassangerModel" Collapsed="true">
+    <Position X="19.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\IPassangerModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EMM_API.Models.RouteModels.ILocomotiveModel" Collapsed="true">
+    <Position X="16" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\ILocomotiveModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EMM_API.Models.RouteModels.IMetersModel" Collapsed="true">
+    <Position X="17.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\IMetersModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EMM_API.Models.RouteModels.IBackgroundTimeModel" Collapsed="true">
+    <Position X="14.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteModels\IBackgroundTimeModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

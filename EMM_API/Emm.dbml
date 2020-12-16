@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="u0992410_EMM_1.0" Class="EmmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=31.31.196.89;Initial Catalog=u0992410_EMM_1.0;Persist Security Info=True;User ID=u0992410_emm_app" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DefaultConnection" Provider="System.Data.SqlClient" />
+  <Table Name="u0992410_vitek4051.BackgroundTime_TT" Member="BackgroundTime_TT">
+    <Type Name="BackgroundTime_TT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inspection" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="cpExit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cpEntrance" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="change" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="BackgroundTime_TT_Locomotives_TT" Member="Locomotives_TT" ThisKey="id" OtherKey="backgroundTimeID" Type="Locomotives_TT" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Locomitive_TS" Member="Locomitive_TS">
+    <Type Name="Locomitive_TS">
+      <Column Name="mk" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sectionCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Locomitive_TS_Locomotives_TT" Member="Locomotives_TT" ThisKey="mk" OtherKey="locomotiveType" Type="Locomotives_TT" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Locomotives_TT" Member="Locomotives_TT">
+    <Type Name="Locomotives_TT">
+      <Column Name="routeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="locomotiveType" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="locomotiveNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="backgroundTimeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Locomotives_TT_Meters_TT" Member="Meters_TT" ThisKey="routeID,locomotiveType,locomotiveNumber" OtherKey="routeID,locomotiveType,locomotiveNumber" Type="Meters_TT" />
+      <Association Name="Locomotives_TT_Trains_TT" Member="Trains_TT" ThisKey="routeID,locomotiveType,locomotiveNumber" OtherKey="routeID,locomotiveType,locomotiveNumber" Type="Trains_TT" />
+      <Association Name="BackgroundTime_TT_Locomotives_TT" Member="BackgroundTime_TT" ThisKey="backgroundTimeID" OtherKey="id" Type="BackgroundTime_TT" IsForeignKey="true" />
+      <Association Name="Locomitive_TS_Locomotives_TT" Member="Locomitive_TS" ThisKey="locomotiveType" OtherKey="mk" Type="Locomitive_TS" IsForeignKey="true" />
+      <Association Name="Routes_TT_Locomotives_TT" Member="Routes_TT" ThisKey="routeID" OtherKey="id" Type="Routes_TT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Meters_TT" Member="Meters_TT">
+    <Type Name="Meters_TT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="routeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="locomotiveType" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="locomotiveNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="motorInspection" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="motorChange" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="brakeInspection" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="brakeChange" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="heatingInspection" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="heatingChange" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Locomotives_TT_Meters_TT" Member="Locomotives_TT" ThisKey="routeID,locomotiveType,locomotiveNumber" OtherKey="routeID,locomotiveType,locomotiveNumber" Type="Locomotives_TT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Passangers_TT" Member="Passangers_TT">
+    <Type Name="Passangers_TT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="routeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="arravalTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="depatureTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="train_s_number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Routes_TT_Passangers_TT" Member="Routes_TT" ThisKey="routeID" OtherKey="id" Type="Routes_TT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Stations_TS" Member="Stations_TS">
+    <Type Name="Stations_TS">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Stations_TS_Trains_TT" Member="Trains_TT" ThisKey="id" OtherKey="arravalStationID" Type="Trains_TT" />
+      <Association Name="Stations_TS_Trains_TT1" Member="Trains_TT1" ThisKey="id" OtherKey="depatureStationID" Type="Trains_TT" />
+      <Association Name="Stations_TS_Stations_TT" Member="Stations_TT" ThisKey="id" OtherKey="stationID" Type="Stations_TT" />
+      <Association Name="Stations_TS_Directions_TS" Member="Directions_TS" ThisKey="id" OtherKey="stationID" Type="Directions_TS" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Trains_TT" Member="Trains_TT">
+    <Type Name="Trains_TT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="routeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="locomotiveType" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="locomotiveNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arravalStationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="depatureStationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="weight" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="axis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Locomotives_TT_Trains_TT" Member="Locomotives_TT" ThisKey="routeID,locomotiveType,locomotiveNumber" OtherKey="routeID,locomotiveType,locomotiveNumber" Type="Locomotives_TT" IsForeignKey="true" />
+      <Association Name="Stations_TS_Trains_TT" Member="Stations_TS" ThisKey="arravalStationID" OtherKey="id" Type="Stations_TS" IsForeignKey="true" />
+      <Association Name="Stations_TS_Trains_TT1" Member="Stations_TS1" ThisKey="depatureStationID" OtherKey="id" Type="Stations_TS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Stations_TT" Member="Stations_TT">
+    <Type Name="Stations_TT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="routeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="depatureTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="arravalTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="maneuvers" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Stations_TS_Stations_TT" Member="Stations_TS" ThisKey="stationID" OtherKey="id" Type="Stations_TS" IsForeignKey="true" />
+      <Association Name="Routes_TT_Stations_TT" Member="Routes_TT" ThisKey="routeID" OtherKey="id" Type="Routes_TT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Directions_TS" Member="Directions_TS">
+    <Type Name="Directions_TS">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="direction" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="stationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Stations_TS_Directions_TS" Member="Stations_TS" ThisKey="stationID" OtherKey="id" Type="Stations_TS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="u0992410_vitek4051.Routes_TT" Member="Routes_TT">
+    <Type Name="Routes_TT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="start" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="finish" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="single" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Routes_TT_Locomotives_TT" Member="Locomotives_TT" ThisKey="id" OtherKey="routeID" Type="Locomotives_TT" />
+      <Association Name="Routes_TT_Passangers_TT" Member="Passangers_TT" ThisKey="id" OtherKey="routeID" Type="Passangers_TT" />
+      <Association Name="Routes_TT_Stations_TT" Member="Stations_TT" ThisKey="id" OtherKey="routeID" Type="Stations_TT" />
+    </Type>
+  </Table>
+  <Function Name="u0992410_vitek4051.InsertBackgroundTime" Method="InsertBackgroundTime">
+    <Parameter Name="backgroundTimeID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="inspection" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cpExit" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cpEntrance" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="change" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="u0992410_vitek4051.InsertRoute" Method="InsertRoute">
+    <Parameter Name="routeID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="userID" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="startParameter" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="finishParameter" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="commentParameter" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="singleParameter" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

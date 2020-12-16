@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMM.Views.PayRollPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Выберите месяц" HorizontalOptions="Center"/>
+                    <Picker ItemsSource="{Binding Months}" SelectedItem="{Binding Month}" WidthRequest="70" FontSize="14" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Position}" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Rate}" HorizontalOptions="Center"/>
+                    <Label Text="{Binding TotalCash}" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+            <ListView
+                ItemsSource="{Binding PremiumStrings}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="True"
+                SelectionMode="None"
+                RefreshCommand="{Binding Load}"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RetainElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Frame Padding="2" CornerRadius="10" Margin = "0,5,0,5">
+                                    <StackLayout Margin="15,20,15,0">
+                                        <Label Text="{Binding Premium}" FontSize="12" />
+                                        <Label Text="{Binding Value}" LineBreakMode="NoWrap" FontSize="Medium"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

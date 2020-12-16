@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMM.Views.AuthenticationPage">
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Entry FontSize="Small" Text="{Binding Login}" Placeholder="Email"/>
+            <Entry FontSize="Small" IsPassword="True" Text="{Binding Password}" Placeholder="Пароль"/>
+            <Label HorizontalOptions="EndAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="Micro" Text="Регистрация" TextColor="Gray" TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegisterCommand}">
+                                    
+                                </TapGestureRecognizer>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Button Text="Вход" Command="{Binding LoginCommand}"/>
+            <AbsoluteLayout>
+                <BoxView Color="Gray" MinimumHeightRequest="1" AbsoluteLayout.LayoutBounds="0,7,100,1"/>
+                <Label Text="или" TextColor="Gray" FontSize="Micro" HorizontalOptions="Center" AbsoluteLayout.LayoutBounds="101,0,30,10"/>
+                <BoxView Color="Gray" MinimumHeightRequest="1" AbsoluteLayout.LayoutBounds="132,7,100,1"/>
+            </AbsoluteLayout>
+            <Button Text="Войти локально" Command="{Binding LocalCommand}"/>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Red" IsVisible="{Binding IsVisible}" IsEnabled="{Binding IsEnable}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMM.Views.ItemsPage"
+             Title="{Binding Title}"
+             
+             x:Name="BrowseItemsPage">
+
+
+    <!--Text="Новый маршрут"-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" IconImageSource ="round_add_24"   Command="{Binding AddRoute}" Clicked="AddItem_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+    <StackLayout>
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding StringRoutes}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="True"
+                RefreshCommand="{Binding Load}"
+                IsPullToRefreshEnabled="True"
+                ItemSelected="OnItemSelected"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RetainElement"
+                SelectionMode="Single"
+                SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                            <Frame Padding="2" CornerRadius="10" Margin = "0,5,0,5">
+                                <StackLayout Padding="10">
+                                    <DatePicker Date="{Binding Date}" IsEnabled="False" FontSize="Micro"/>
+                                    <Label Text="{Binding Direction}" 
+                                LineBreakMode="NoWrap"
+                                FontSize="7" />
+                                </StackLayout>
+                            </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

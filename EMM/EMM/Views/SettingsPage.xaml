@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMM.Views.SettingsPage" Title="Настройки">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <!--<Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label Text="Должность" VerticalTextAlignment="Center"/>
+                    <Picker ItemsSource="{Binding Positions}" SelectedItem="{Binding Position}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Тарифная ставка" VerticalTextAlignment="Center"/>
+                    <Entry Text="{Binding Rate}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Квалификация" VerticalTextAlignment="Center"/>
+                    <Picker ItemsSource="{Binding Qualifications}" SelectedItem="{Binding Qualification}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Frame>-->
+            <TableView Intent="Settings" HasUnevenRows="False" RowHeight="60">
+                <TableRoot>
+                    <TableSection Title="Должность и квалификация">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10" MinimumHeightRequest="55">
+                                <!--<Label Text="Должность" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>-->
+                                <Picker ItemsSource="{Binding Positions}" SelectedItem="{Binding Position}" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <!--<Label Text="Квалификация" VerticalTextAlignment="Center"/>-->
+                                <Picker ItemsSource="{Binding Qualifications}" SelectedItem="{Binding Qualification}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Тарифная ставка">
+                        <EntryCell Text="{Binding Rate}" Placeholder="Введите ставку" Keyboard="Numeric" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                    </TableSection>
+                    <TableSection>
+                        <TextCell Text="Изменить пароль" Command="{Binding ChangePasswordCommand}"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
