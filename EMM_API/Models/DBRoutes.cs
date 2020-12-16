@@ -14,7 +14,7 @@ namespace EMM_API.Models
         {
             using (context)
             {
-                var routes = context.Routes_TT.Where(route => route.userID == userID);
+                var routes = context.Routes_TT.Where(route => route.userID == userID).OrderBy(routeDTO => routeDTO.start);
                 var result = new List<Route>();
                 foreach(var route in routes)
                 {
