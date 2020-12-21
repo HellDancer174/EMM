@@ -6,7 +6,7 @@ namespace EMM.Models
 {
     public abstract class RouteDecorator: Route
     {
-        private Route route;
+        protected Route route;
 
         public RouteDecorator(Route route)
         {

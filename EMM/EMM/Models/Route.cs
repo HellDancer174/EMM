@@ -7,11 +7,13 @@ using System.Text;
 using EMM.ViewModels;
 using Newtonsoft.Json;
 using EMM.Helpers;
+using ImmutableObject;
+using EMM.Services;
 
 namespace EMM.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class Route : IEquatable<Route>, IRouteModel
+    public class Route : IEquatable<Route>, IRouteModel, IDocument
     {
         [JsonProperty]
         private int id;
@@ -55,7 +57,7 @@ namespace EMM.Models
             this.comment = comment;
             this.single = single;
         }
-        public bool Check()
+        public virtual bool Check()
         {
             if (this.start == Settings.DefaultDateTime || this.finish == Settings.DefaultDateTime) return false;
             var maxTime = new TimeSpan(12, 0, 0);
@@ -87,8 +89,6 @@ namespace EMM.Models
             if (id == -1)
             { 
                 return base.Equals(other);
-                //if (equals == true) return equals;
-                //else return start == other.start && finish == other.finish;
             }
             if (this.id == other.id) return true;
             else return false;
@@ -128,22 +128,11 @@ namespace EMM.Models
             var correcter = new CorrecterWorkDateTime();
             correcter.Correct(out start, out finish, month, year, this.start, this.finish);
             return finish - start;
-            //if (month <= 0 || month > 12 || (start.Month != month && finish.Month != month)||(start.Year != year && finish.Year != year)) return default(TimeSpan);  
-            //else if (start.Month != month && finish.Month == month && finish.Year == year) return finish - new DateTime(finish.Year, month, 1);
-            //else if (start.Month == month && finish.Month != month && start.Year == year) return new DateTime(start.Year, month, DateTime.DaysInMonth(start.Year, month), 23, 59, 59) - start;
-            //else if(start.Year != year || finish.Year != year) return default(TimeSpan);
-            //else return ToWorkTime();
         }
         public TimeSpan ToWorkTime()
         {
             return finish - start;
         }
-        //public void AddInLocalRoutes(IList<Route> routes)
-        //{
-        //    id = routes.Count;
-        //    routes.Add(this);           
-        //}
-        //public void UpdateInLocalRoutes(IList<Route> routes) => routes[id] = this;
         public RoutePremium CreateRoutePremium(Directions directions, double rate, int month, int year)
         {
             var start = new DateTime();
@@ -157,17 +146,11 @@ namespace EMM.Models
             var passPremium = new PassangersPremium(pass);
             return new RoutePremium(start, finish, trainsPremium, new ServiceAreaPremium(serviceArea, ToWorkTime(month, year), pass.CalcWaitPassangersTime() + pass.CalcPassangersTime()), passPremium, pass, rate, this);
         }
-        
-        //public IDictionary<string, double> ToListOfTechnicalSpeed()
-        //{
-        //    var dict = new Dictionary<string, double>();
-        //    if (stations.Count == 0) return dict;
-        //    foreach(var train in trains)
-        //    {
-        //        dict.Add(train.ToString(), train.ToTechnicalSpeed(stations));
-        //    }
-        //    return dict;
-        //}
 
+        public virtual async void Transfer()
+        {
+            var service = new ApiServices();
+            await service.CreateRouteAsync(Settings.AccessToken, this);
+        }
     }
 }

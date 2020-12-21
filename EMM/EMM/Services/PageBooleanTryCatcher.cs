@@ -13,6 +13,10 @@ namespace EMM.Services
         {
             this.page = page;
         }
+        public PageBooleanTryCatcher(PageBooleanTryCatcher other)
+        {
+            page = other.page;
+        }
 
         protected override bool ReFunction()
         {
