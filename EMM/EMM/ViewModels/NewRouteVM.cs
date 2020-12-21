@@ -12,6 +12,7 @@ using System.Windows.Input;
 using EMM.Helpers;
 using Plugin.Connectivity;
 using EMM.Views;
+using EMM.Trip.Routes;
 
 namespace EMM.ViewModels
 {
@@ -27,7 +28,12 @@ namespace EMM.ViewModels
         {
             get
             {
-                return commander.CreateForRoute(() => MessagingCenter.Send(this, "AddRoute", (Route)model), Save, page);
+                return new Command(async() =>
+                {
+                    if (Save() == false) page.PrintErorAsync("Проверьте правильность введенных данных");
+                    Route route = new InsertableRoute((Route)model, new ApiServices(), page);
+                    await route.Transfer();
+                });
             }
         }
 

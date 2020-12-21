@@ -40,5 +40,10 @@ namespace EMM.Helpers
                 return;
             }
         }
+        //public override string ToString()
+        //{
+        //    var json = response.Content.ToString();
+        //    return string.Format("{0}: {1}", response.StatusCode, json);
+        //}
     }
 }

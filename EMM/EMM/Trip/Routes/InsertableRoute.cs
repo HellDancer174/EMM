@@ -5,6 +5,7 @@ using EMM.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EMM.Trip.Routes
 {
@@ -19,7 +20,7 @@ namespace EMM.Trip.Routes
             this.media = media;
         }
 
-        public override async void Transfer()
+        public override async Task Transfer()
         {
             bool result = false;
             try
@@ -28,9 +29,7 @@ namespace EMM.Trip.Routes
             }
             catch (HttpResponseException ex)
             {
-                var isServerEror = ex.StatusCodesEquals(System.Net.HttpStatusCode.InternalServerError);
-                if (isServerEror) media.PrintErorAsync("При добавлении маршрута произошла внутренняя ошибка сервера");
-                else media.PrintErorAsync("Не удалось выполнить запрос из-за ключевой проблемы, например подключения к сети, ошибки DNS, проверки сертификата сервера или времени ожидания");
+                await ex.PrintEror(media);
             }
         }
     }

@@ -9,11 +9,12 @@ using Newtonsoft.Json;
 using EMM.Helpers;
 using ImmutableObject;
 using EMM.Services;
+using System.Threading.Tasks;
 
 namespace EMM.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class Route : IEquatable<Route>, IRouteModel, IDocument
+    public class Route : IEquatable<Route>, IRouteModel, IDocumentAsync
     {
         [JsonProperty]
         private int id;
@@ -147,7 +148,7 @@ namespace EMM.Models
             return new RoutePremium(start, finish, trainsPremium, new ServiceAreaPremium(serviceArea, ToWorkTime(month, year), pass.CalcWaitPassangersTime() + pass.CalcPassangersTime()), passPremium, pass, rate, this);
         }
 
-        public virtual async void Transfer()
+        public virtual async Task Transfer()
         {
             var service = new ApiServices();
             await service.CreateRouteAsync(Settings.AccessToken, this);
