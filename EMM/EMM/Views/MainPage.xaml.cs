@@ -44,6 +44,7 @@ namespace EMM.Views
         protected override bool OnBackButtonPressed()
         {
             settings.Save();
+            Settings.AccessToken = string.Empty;
             return base.OnBackButtonPressed();
         }
         public async Task NavigateFromMenu(HomeMenuItem menuItem)

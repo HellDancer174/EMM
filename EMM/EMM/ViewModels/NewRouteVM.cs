@@ -33,6 +33,7 @@ namespace EMM.ViewModels
                     if (Save() == false) page.PrintErorAsync("Проверьте правильность введенных данных");
                     Route route = new InsertableRoute((Route)model, new ApiServices(), page);
                     await route.Transfer();
+                    page.GoBackAsync();
                 });
             }
         }
