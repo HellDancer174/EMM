@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EMM_API.Landing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,7 @@ namespace EMM_API.Controllers
         {
             ViewBag.Title = "Home Page";
 
-            return View();
+            return View(new LandingModel());
         }
     }
 }
