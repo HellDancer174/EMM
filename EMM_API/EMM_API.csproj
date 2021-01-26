@@ -547,7 +547,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DirectionsController.cs" />
-    <Compile Include="Controllers\FileControllers\InstallerFileController.cs" />
+    <Compile Include="Controllers\FileControllers\InstallFileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocomotivesController.cs" />
     <Compile Include="Controllers\RateController.cs" />
@@ -668,6 +668,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Models.cd" />
+    <Content Include="Files\com.VI.EMM_2_0.apk" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="RateDataContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -705,7 +706,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Files\" />
+    <Folder Include="Views\InstallFile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
