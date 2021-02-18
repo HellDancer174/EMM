@@ -14,7 +14,7 @@ namespace EMM.Trip.Routes
         private readonly ApiServices services;
         private readonly ICommandPage media;
 
-        public InsertableRoute(Route route, ApiServices services, ICommandPage media) : base(route)
+        public InsertableRoute(Route route, Aut, ICommandPage media) : base(route)
         {
             this.services = services;
             this.media = media;
