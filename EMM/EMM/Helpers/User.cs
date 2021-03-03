@@ -21,17 +21,15 @@ namespace EMM.Helpers
         protected int qualificationClass;
         private IDictionary<int, int> qualificationPremiumPairs = new Dictionary<int, int>() { { 1, 20 }, { 2, 10 }, { 3, 5 }, { 4, 0 }, { 5, 5 }, { 6, 0 } };
         protected IDictionary<int, string> qualificationNames = new Dictionary<int, string>() { { 1, "1 класс" }, { 2, "2 класс" }, { 3, "3 класс" }, { 4, "Без класса" }, { 5, "С правами управления" }, { 6, "Без прав управления" } };
-        public User()
+        public User(): this("Помощник машиниста электровоза (пассажирское движение)", 144.2, 6)
         {
-            position = "Помощник машиниста электровоза (пассажирское движение)";
-            rate = 144.2;
-            qualificationClass = 6;
         }
         public User(string position, double rate, int qualificationClass)
         {
             this.position = position;
             this.rate = rate;
-            this.qualificationClass = HandleQualification(qualificationClass);
+            if (qualificationClass > 6 || qualificationClass < 1) this.qualificationClass = 6;
+            else this.qualificationClass = qualificationClass;
         }
         public User(string position, double rate, string qualification)
         {
