@@ -1,14 +1,11 @@
-﻿using LifeHacks;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
-using EMM.ViewModels;
-using Newtonsoft.Json;
-using EMM.Helpers;
-using ImmutableObject;
+﻿using EMM.Helpers;
+using EMM.Infrastructure;
 using EMM.Services;
+using LifeHacks;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EMM.Models
